@@ -1,0 +1,19 @@
+<div class="content">
+  <div>
+    <div *ngIf="info" fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.md="33%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let character of characters | paginate: {
+                    id: 'charactersPagination',
+                    itemsPerPage: itemsPerPage,
+                    currentPage: page,
+                    totalItems: info.count
+                  }">
+        <app-character-card [character]="character" [routerLink]="['/characters/',character.id]"
+          [state]="{data: character}">
+        </app-character-card>
+      </div>
+    </div>
+  </div>
+  <pagination-controls class="pagination" id="charactersPagination" previousLabel="Prev" nextLabel="Next"
+    [responsive]="true" (pageChange)="pageChanged($event)">
+  </pagination-controls>
+</div>

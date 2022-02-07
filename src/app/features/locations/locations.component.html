@@ -1,0 +1,53 @@
+<div class="content" style="margin-left: 50px; margin-right: 50px;padding-bottom: 50px; padding-top: 20px;">
+    <div *ngIf="info" class=" mat-elevation-z8">
+        <table mat-table [dataSource]="locations | paginate: {
+            id: 'locationsPagination',
+            itemsPerPage: itemsPerPage,
+            currentPage: page,
+            totalItems: info.count
+          }">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef> Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dimension">
+                <th mat-header-cell *matHeaderCellDef> Dimension </th>
+                <td mat-cell *matCellDef="let element"> {{element.dimension}} </td>
+            </ng-container>
+            <ng-container matColumnDef="created">
+                <th mat-header-cell *matHeaderCellDef> Created </th>
+                <td mat-cell *matCellDef="let element"> {{element.created | date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="totchars">
+                <th mat-header-cell *matHeaderCellDef> Total Char. </th>
+                <td mat-cell *matCellDef="let element"> {{element.residentsIds.length}} </td>
+            </ng-container>
+            <ng-container matColumnDef="characters">
+                <th mat-header-cell *matHeaderCellDef>See Characters</th>
+                <td class="w-75" mat-cell *matCellDef="let element">
+                    <button [disabled]="element.residentsIds.length<1" mat-mini-fab color="primary"
+                        (click)="openCharactersDialog(element)">
+                        <mat-icon class="whiteIcon" svgIcon="rickIcon"></mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <pagination-controls class="pagination paginationTable" id="locationsPagination" previousLabel="Prev"
+            nextLabel="Next" [responsive]="true" (pageChange)="pageChanged($event)">
+        </pagination-controls>
+    </div>
+</div>

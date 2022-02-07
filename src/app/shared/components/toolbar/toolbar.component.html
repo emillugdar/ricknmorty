@@ -1,0 +1,14 @@
+<span class="header">
+  <mat-toolbar class="appToolbar" color="primary">
+    <mat-icon svgIcon="rickIcon" class="whiteIcon"></mat-icon>
+    <span class="toolbarTitle">Rick and Morty App</span>
+    <span class="spacer"></span>
+    <button mat-flat-button color="primary" [routerLink]="['/characters']"
+      routerLinkActive="mat-raised-button">Characters</button>
+    <button mat-flat-button color="primary" routerLinkActive="mat-raised-button"
+      [routerLink]="['/locations']">Locations</button>
+    <button mat-flat-button routerLinkActive="mat-raised-button" [routerLink]="['/episodes']"
+      color="primary">Episodes</button>
+  </mat-toolbar>
+  <!--<mat-progress-bar *ngIf="isLoading" color="accent" mode="indeterminate"></mat-progress-bar>-->
+</span>

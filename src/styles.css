@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: grey;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.ngx-pagination {
+  padding-left: 0px !important;
+}
+.content {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+table {
+  width: 100%;
+}
+.paginationTable {
+  background: #424242;
+}
+.ngx-pagination a,
+.ngx-pagination button {
+  color: white !important;
+}
+.content {
+  margin-top: 80px;
+}
+
+.ngx-pagination .disabled {
+  color: black !important;
+}
+.whiteIcon {
+  filter: brightness(0) invert(1);
+  transform: scale(1.5);
+}
+.w-75 {
+  width: 75px !important;
+}
+.mat-dialog-container {
+  border-radius: 20px !important;
+}
+.mat-header-row {
+  border-radius: 20px !important;
+}

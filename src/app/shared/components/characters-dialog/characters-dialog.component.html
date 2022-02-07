@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Characters in {{data.place}}</h2>
+<mat-dialog-content>
+  <div style="margin-top: 10px; margin-bottom: 10px;">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div [fxFlex]="data.characters.length>1 ? '33%' : '100%'" fxFlex.xs="100%"
+        [fxFlex.sm]="data.characters.length>1 ? '50%' : '100%'" *ngFor="let character of data.characters">
+        <app-character-card [character]="character"></app-character-card>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
