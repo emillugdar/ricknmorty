@@ -1,12 +1,13 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, delay } from 'rxjs';
+import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { LoaderService } from './loader.service';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class InterceptorService implements HttpInterceptor {
   requestsCount = 0;
   constructor(private loaderService: LoaderService) { }

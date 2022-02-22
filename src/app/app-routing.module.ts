@@ -20,10 +20,13 @@ const routes: Routes = [
     loadChildren: () => import('./features/locations/locations.module').then((m) => m.LocationsModule)
   },
   {
+    path: 'jsoneditor',
+    loadChildren: () => import('./features/jsoneditor/jsoneditor.module').then((m) => m.JsoneditorModule)
+  },
+  {
     path: '**',
     redirectTo: 'characters'
   }
-
 ];
 
 @NgModule({

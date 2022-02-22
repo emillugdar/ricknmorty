@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  // base_url: 'https://rickandmortyapi.com/api'
   base_url: 'https://deelay.me/500/http://localhost:8080/api',
   ricknmorty_base_url: 'https://deelay.me/500/https://rickandmortyapi.com/api'
 };

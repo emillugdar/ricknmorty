@@ -20,5 +20,6 @@ import { LocationsService } from './locations.service';
     LocationsService
   ]
 })
-export class LocationsModule { }
+
+export class LocationsModule {}
 

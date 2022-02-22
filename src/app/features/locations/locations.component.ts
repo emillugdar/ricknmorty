@@ -8,9 +8,9 @@ import { Info } from 'src/app/core/info.interface';
 
 @Component({
   selector: 'app-locations',
-  templateUrl: './locations.component.html',
-  styleUrls: ['./locations.component.css']
+  templateUrl: './locations.component.html'
 })
+
 export class LocationsComponent implements OnInit {
   public locations: Location[] = [];
   public info!: Info;
@@ -35,16 +35,17 @@ export class LocationsComponent implements OnInit {
         this.dataSource = new MatTableDataSource<Location>(this.locations);
       })
   }
+
   pageChanged($event: number) {
     this.page = $event;
     this.loadLocations();
   }
+
   openCharactersDialog(location: Location) {
     this.charactersService.getCharactersByIds(location.residentsIds)
       .subscribe((data: Character[]) => {
         let characters = location.residentsIds.length > 1 ? data : [data];
         this.dialog.open(CharactersDialogComponent, { data: { place: location.name, characters: characters } });
       })
-
   }
 }

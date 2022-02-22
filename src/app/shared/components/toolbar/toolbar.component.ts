@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoaderService } from 'src/app/core/loader.service';
 
 @Component({
@@ -6,8 +6,10 @@ import { LoaderService } from 'src/app/core/loader.service';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
+
 export class ToolbarComponent {
   isLoading = true;
+
   constructor(private loaderService: LoaderService) {
     this.loaderService.isLoading.subscribe((result) => {
       this.isLoading = result;

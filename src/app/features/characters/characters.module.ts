@@ -5,7 +5,6 @@ import { CharacterViewComponent } from './character-view/character-view.componen
 import { CharactersComponent } from './characters.component';
 import { CharactersService } from './characters.service';
 
-
 @NgModule({
   imports: [
     SharedModule,
@@ -31,5 +30,5 @@ import { CharactersService } from './characters.service';
     CharactersService
   ]
 })
-export class CharactersModule { }
 
+export class CharactersModule {}

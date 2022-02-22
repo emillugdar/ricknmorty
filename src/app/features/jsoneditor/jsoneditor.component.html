@@ -1,0 +1,24 @@
+<div class="content" style="margin-left: 50px; margin-right: 50px;padding-bottom: 50px; padding-top: 20px;">
+  <div>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="50%" fxFlex.xs="100%">
+        <!--<button (click)="setLang('en')">Inglés</button> <button (click)="setLang('es')">Español</button>
+        <json-editor #editor [options]="editorOptions" [data]="initialData" (error)="onError($event)"
+          (change)="showJson($event)">
+        </json-editor>-->
+        <json-editor #editor [options]="editorOptions" [data]="initialData"
+                     (change)="onChange($event)">
+        </json-editor>
+        <app-schema-errors [errors]="errors"></app-schema-errors>
+        <button (click)="save()" mat-flat-button [disabled]="errors" color="primary">
+          Save
+        </button>
+      </div>
+      <div fxFlex="50%" fxFlex.xs="100%">
+        <textarea readonly style="width: 100%; height: 100%;">
+          {{ newJson | json }}
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>

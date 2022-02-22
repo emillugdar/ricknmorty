@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Info } from "../../core/info.interface";
 
-
 export interface Episode {
   id: number,
   name: string,
@@ -17,13 +16,13 @@ export interface Episode {
 }
 
 const base_url = environment.base_url;
+
 @Injectable({
   providedIn: 'root'
 })
 export class EpisodesService {
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
+  
   getEpisodes(page: number, limit: number) {
     let params = new HttpParams().set('page', page).set('limit', limit);
     const url = `${base_url}/episode`;

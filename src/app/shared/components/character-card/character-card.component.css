@@ -5,12 +5,14 @@
   padding: 0;
   display: flex;
 }
+
 .character-image {
   margin: 0;
   height: 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 .character-card-content {
   margin-top: 10px;
   margin-left: 10px;

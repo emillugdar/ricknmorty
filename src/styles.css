@@ -55,3 +55,17 @@ table {
 .mat-header-row {
   border-radius: 20px !important;
 }
+.jsoneditor-menu {
+  background-color: #c2185b !important;
+  border-color: #c2185b !important;
+}
+.jsoneditor {
+  border-color: #c2185b !important;
+}
+.jsoneditor-contextmenu .jsoneditor-menu {
+  background-color: white !important;
+  border-color: white !important;
+}
+.jsoneditor-type-auto {
+  display: none;
+}

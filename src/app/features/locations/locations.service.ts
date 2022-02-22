@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Info } from "../../core/info.interface";
 
-
 export interface Location {
   id: number,
   name: string,
@@ -16,14 +15,15 @@ export interface Location {
   residentsIds: number[]
 
 }
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class LocationsService {
   base_url = environment.base_url;
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
+  
   getLocations(page: number, limit: number) {
     let params = new HttpParams().set('page', page).set('limit', limit);
     const url = `${this.base_url}/location`;

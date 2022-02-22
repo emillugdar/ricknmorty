@@ -4,8 +4,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { EpisodesComponent } from './episodes.component';
 import { EpisodesService } from './episodes.service';
 
-
-
 @NgModule({
   imports: [
     SharedModule,
@@ -21,5 +19,4 @@ import { EpisodesService } from './episodes.service';
     EpisodesService
   ]
 })
-export class EpisodesModule { }
-
+export class EpisodesModule {}

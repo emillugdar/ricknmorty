@@ -6,12 +6,12 @@ import { CharactersDialogComponent } from 'src/app/shared/components/characters-
 import { Episode, EpisodesService } from './episodes.service';
 import { Character, CharactersService } from '../characters/characters.service';
 
-
 @Component({
   selector: 'app-episodes',
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.css']
 })
+
 export class EpisodesComponent implements OnInit {
   public episodes: Episode[] = [];
   public info!: Info;
@@ -20,9 +20,9 @@ export class EpisodesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'air_date', 'episode', 'created', 'totchars', 'characters'];
   dataSource: any = null;
 
-  constructor(private episodesService: EpisodesService, private charactersService: CharactersService, public dialog: MatDialog,) {
-
-  }
+  constructor(private episodesService: EpisodesService,
+              private charactersService: CharactersService,
+              public dialog: MatDialog,) {}
 
   ngOnInit(): void {
     this.loadEpisodes();
@@ -48,6 +48,5 @@ export class EpisodesComponent implements OnInit {
         let characters = episode.charactersIds.length > 1 ? data : [data];
         this.dialog.open(CharactersDialogComponent, { data: { place: episode.name, characters: characters } });
       })
-
   }
 }

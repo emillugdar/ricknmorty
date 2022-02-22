@@ -10,7 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatTable, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -18,6 +18,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   LoaderComponent,
@@ -28,11 +30,12 @@ import {
 
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 const components = [
   LoaderComponent,
   ToolbarComponent,
   CharacterCardComponent,
-  CharactersDialogComponent
+  CharactersDialogComponent,
 ]
 
 const modules = [
@@ -56,11 +59,15 @@ const modules = [
   MatDialogModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
-  RouterModule];
+  RouterModule,
+  NgJsonEditorModule,
+  FormsModule,
+  ReactiveFormsModule];
 
 @NgModule({
   imports: [...modules],
   declarations: [components],
   exports: [modules, components]
 })
-export class SharedModule { }
+
+export class SharedModule {}
